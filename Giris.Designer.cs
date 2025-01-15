@@ -37,8 +37,8 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbDurum = new System.Windows.Forms.ComboBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnKullaniciSec = new System.Windows.Forms.Button();
+            this.btnDepartmanSec = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -71,8 +71,8 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cmbDurum);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnKullaniciSec);
+            this.panel1.Controls.Add(this.btnDepartmanSec);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.button1);
@@ -174,25 +174,27 @@
             this.cmbDurum.Size = new System.Drawing.Size(133, 21);
             this.cmbDurum.TabIndex = 5;
             // 
-            // button4
+            // btnKullaniciSec
             // 
-            this.button4.Location = new System.Drawing.Point(225, 64);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(25, 20);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "...";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnKullaniciSec.Location = new System.Drawing.Point(225, 64);
+            this.btnKullaniciSec.Name = "btnKullaniciSec";
+            this.btnKullaniciSec.Size = new System.Drawing.Size(25, 20);
+            this.btnKullaniciSec.TabIndex = 4;
+            this.btnKullaniciSec.Text = "...";
+            this.btnKullaniciSec.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnKullaniciSec.UseVisualStyleBackColor = true;
+            this.btnKullaniciSec.Click += new System.EventHandler(this.btnKullaniciSec_Click);
             // 
-            // button3
+            // btnDepartmanSec
             // 
-            this.button3.Location = new System.Drawing.Point(225, 38);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 20);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "...";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDepartmanSec.Location = new System.Drawing.Point(225, 38);
+            this.btnDepartmanSec.Name = "btnDepartmanSec";
+            this.btnDepartmanSec.Size = new System.Drawing.Size(25, 20);
+            this.btnDepartmanSec.TabIndex = 4;
+            this.btnDepartmanSec.Text = "...";
+            this.btnDepartmanSec.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDepartmanSec.UseVisualStyleBackColor = true;
+            this.btnDepartmanSec.Click += new System.EventHandler(this.btnDepartmanSec_Click);
             // 
             // button2
             // 
@@ -347,7 +349,7 @@
             // notEkleToolStripMenuItem
             // 
             this.notEkleToolStripMenuItem.Name = "notEkleToolStripMenuItem";
-            this.notEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notEkleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.notEkleToolStripMenuItem.Text = "Not Ekle";
             this.notEkleToolStripMenuItem.Click += new System.EventHandler(this.notEkleToolStripMenuItem_Click);
             // 
@@ -395,8 +397,8 @@
         private System.Windows.Forms.TextBox txtAciklama;
         private System.Windows.Forms.TextBox txtBaslik;
         private System.Windows.Forms.TextBox txtKullanici;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnKullaniciSec;
+        private System.Windows.Forms.Button btnDepartmanSec;
         private System.Windows.Forms.ComboBox cmbDurum;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;

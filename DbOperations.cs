@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Collections.Generic;
 
 namespace Talepler
 {
@@ -133,5 +134,53 @@ namespace Talepler
                 return false;
             }
         }
+
+        public static DataTable DepartmanListele()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "select DepartmanAdi from Departments";
+                    using(SqlCommand cmd = new SqlCommand(sql,conn))
+                    {
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+                throw;
+            }
+        }
+        public static DataTable KullaniciListele()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "select adSoyad from Users";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+                throw;
+            }
+        }
+
     }
 }

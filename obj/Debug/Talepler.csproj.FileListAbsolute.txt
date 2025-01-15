@@ -14,3 +14,5 @@ D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.exe
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.pdb
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.NotEkle.resources
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.Detaylar.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.DepartmanSec.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.KullaniciSec.resources

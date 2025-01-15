@@ -148,5 +148,19 @@ namespace Talepler
             Forms.Detaylar detaylar = new Forms.Detaylar();
             detaylar.ShowDialog();
         }
+
+        private void btnDepartmanSec_Click(object sender, EventArgs e)
+        {
+            Forms.DepartmanSec departmanSec = new Forms.DepartmanSec();
+            departmanSec.ShowDialog();
+            txtDepartman.Text = departmanSec.selectedDepartment;
+        }
+
+        private void btnKullaniciSec_Click(object sender, EventArgs e)
+        {
+            Forms.KullaniciSec frm = new Forms.KullaniciSec();
+            frm.ShowDialog();
+            txtKullanici.Text = frm.selectedUser;
+        }
     }
 }

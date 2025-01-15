@@ -61,11 +61,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DepartmanSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepartmanSec.Designer.cs">
+      <DependentUpon>DepartmanSec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Detaylar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Detaylar.Designer.cs">
       <DependentUpon>Detaylar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullaniciSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullaniciSec.Designer.cs">
+      <DependentUpon>KullaniciSec.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\NotEkle.cs">
       <SubType>Form</SubType>
@@ -84,8 +96,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepartmanSec.resx">
+      <DependentUpon>DepartmanSec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Detaylar.resx">
       <DependentUpon>Detaylar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullaniciSec.resx">
+      <DependentUpon>KullaniciSec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NotEkle.resx">
       <DependentUpon>NotEkle.cs</DependentUpon>
