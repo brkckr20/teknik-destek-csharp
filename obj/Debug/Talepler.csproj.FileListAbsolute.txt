@@ -1,0 +1,16 @@
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\Talepler.exe.config
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\Talepler.exe
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\Talepler.pdb
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\C1.Win.4.6.2.dll
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\C1.Win.4.6.2.xml
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.csproj.AssemblyReference.cache
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Form1.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Giris.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Properties.Resources.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.csproj.GenerateResource.cache
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.csproj.CoreCompileInputs.cache
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.csproj.Up2Date
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.exe
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.pdb
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.NotEkle.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.Detaylar.resources
