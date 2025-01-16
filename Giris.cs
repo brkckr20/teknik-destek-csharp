@@ -13,6 +13,7 @@ namespace Talepler
     public partial class Giris : Form
     {
         private int id = 0;
+        DataTable dataTable;
 
         public Giris()
         {
@@ -37,19 +38,20 @@ namespace Talepler
         {
             string durumFiltre = null;
 
-            if (radioButton2.Checked) 
+            if (radioButton2.Checked)
             {
                 durumFiltre = "1";
             }
-            else if (radioButton3.Checked) 
+            else if (radioButton3.Checked)
             {
                 durumFiltre = "2";
             }
-            else if (radioButton4.Checked) 
+            else if (radioButton4.Checked)
             {
-                durumFiltre = "0"; 
+                durumFiltre = "0";
             }
-            dataGridView1.DataSource = DbOperations.TalepListesi(durumFiltre);
+            dataTable = DbOperations.TalepListesi(durumFiltre);
+            dataGridView1.DataSource = dataTable;
             dataGridView1.Columns["Id"].Visible = false;
         }
 
@@ -106,11 +108,10 @@ namespace Talepler
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 id = int.Parse(row.Cells["Id"].Value.ToString());
-                // Form kontrollerine verileri doldur
                 txtDepartman.Text = row.Cells["Departman"].Value?.ToString();
                 txtKullanici.Text = row.Cells["Kullanici"].Value?.ToString();
                 txtBaslik.Text = row.Cells["Baslik"].Value?.ToString();
@@ -121,7 +122,7 @@ namespace Talepler
                     dateTarih.Value = tarih;
                 }
 
-                string durum = row.Cells["Durum"].Value?.ToString();
+                string durum = row.Cells["Durumu"].Value?.ToString();
                 switch (durum)
                 {
                     case "İptal":
@@ -146,6 +147,10 @@ namespace Talepler
         private void detayGörüntüleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Forms.Detaylar detaylar = new Forms.Detaylar();
+            detaylar._id = this.id;
+            detaylar._date = dateTarih.Value.ToString();
+            detaylar._department = txtDepartman.Text;
+            detaylar._name = txtKullanici.Text;
             detaylar.ShowDialog();
         }
 
@@ -180,6 +185,44 @@ namespace Talepler
                 dt.Rows.Add(dataRow);
             }
             ExportOperations.ExportExcel(dt);
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Kayıt silinecek!\nBu işlem geri alınamaz!!!", "Uyarı", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                if (DbOperations.TalepSil(this.id))
+                {
+                    VerileriYukle();
+                }
+            }
+        }
+
+        private void txtBaslikFiltre_TextChanged(object sender, EventArgs e)
+        {
+            string filter = txtBaslikFiltre.Text.ToLower();
+            if (string.IsNullOrEmpty(filter))
+            {
+                dataGridView1.DataSource = dataTable;
+            }
+            else
+            {
+                var filteredRows = dataTable.AsEnumerable()
+    .Where(row => row.Field<string>("Baslik").ToLower().Contains(filter))
+    .ToList();  // Convert to List
+
+                // If there are no matching rows, create an empty DataTable
+                if (filteredRows.Count == 0)
+                {
+                    filteredRows = new List<DataRow>();  // Empty list
+                }
+
+                // Convert back to DataTable if necessary
+                var filteredDataTable = filteredRows.Any() ? filteredRows.CopyToDataTable() : dataTable.Clone();  // If no rows, create an empty DataTable
+
+                dataGridView1.DataSource = filteredDataTable;
+
+            }
         }
     }
 }

@@ -15,9 +15,11 @@ namespace Talepler.Forms
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
+        public int _id;
+        public string _name,_department,_date;
         public Detaylar()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -43,6 +45,14 @@ namespace Talepler.Forms
         private void Panel1_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void Detaylar_Load(object sender, EventArgs e)
+        {
+            label2.Text += " " + this._date;
+            label4.Text += " " + this._department;
+            label3.Text += " " + this._name;
+            dataGridView1.DataSource =  DbOperations.DetaylariGetir(this._id);
         }
     }
 }

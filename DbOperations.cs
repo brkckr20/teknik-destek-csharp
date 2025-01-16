@@ -71,20 +71,25 @@ namespace Talepler
                 {
                     conn.Open();
                     string sql = @"SELECT 
-                                    Id,
+                                    TS.Id,
                                     Departman, 
                                     Kullanici, 
                                     Baslik, 
                                     Aciklama, 
-                                    CASE Durum 
+                                    CASE Durumu 
                                         WHEN '0' THEN 'İptal'
                                         WHEN '1' THEN 'Beklemede'
                                         WHEN '2' THEN 'Tamamlandı'
                                         ELSE 'Belirsiz'
-                                    END as Durum, 
-                                    Tarih 
-                                FROM TechnicalSupport 
-                                WHERE (@durumFiltre IS NULL OR Durum = @durumFiltre)
+                                    END as Durumu, 
+                                    Tarih,
+                                    CASE 
+                                               WHEN N.RefNo IS NOT NULL THEN 'Güncelleme var' 
+                                               ELSE '' 
+                                           END AS Güncelleme
+                                FROM TechnicalSupport TS
+                                LEFT JOIN Notes N ON TS.Id = N.RefNo
+                                WHERE (@durumFiltre IS NULL OR Durumu = @durumFiltre)
                                 ORDER BY Tarih DESC";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
@@ -182,5 +187,55 @@ namespace Talepler
             }
         }
 
+        public static bool TalepSil(int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "delete from TechnicalSupport where Id=@Id";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public static DataTable DetaylariGetir(int RefNo)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = @"select * from Notes where RefNo = @RefNo";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@RefNo", RefNo);
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Veriler yüklenirken hata oluştu: " + ex.Message, "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
     }
 }
