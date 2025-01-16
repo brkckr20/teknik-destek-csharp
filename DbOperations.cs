@@ -21,7 +21,7 @@ namespace Talepler
                     
                     if (id == 0)
                     {
-                        sql = @"INSERT INTO TechnicalSupport (Departman, Kullanici, Baslik, Aciklama, Durum, Tarih) 
+                        sql = @"INSERT INTO TechnicalSupport (Departman, Kullanici, Baslik, Aciklama, Durumu, Tarih) 
                                VALUES (@departman, @kullanici, @baslik, @aciklama, @durum, @kayitTarihi)";
                     }
                     else
@@ -31,7 +31,7 @@ namespace Talepler
                                    Kullanici = @kullanici, 
                                    Baslik = @baslik,
                                    Aciklama = @aciklama,
-                                   Durum = @durum,
+                                   Durumu = @durum,
                                    Tarih = @kayitTarihi
                                WHERE Id = @id";
                     }

@@ -63,6 +63,8 @@
             this.detayGörüntüleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtKullaniciFiltre = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,12 +86,14 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtAciklama);
+            this.panel1.Controls.Add(this.txtKullaniciFiltre);
             this.panel1.Controls.Add(this.txtBaslikFiltre);
             this.panel1.Controls.Add(this.txtBaslik);
             this.panel1.Controls.Add(this.txtKullanici);
@@ -108,7 +112,7 @@
             this.panel3.Controls.Add(this.radioButton2);
             this.panel3.Controls.Add(this.radioButton1);
             this.panel3.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.panel3.Location = new System.Drawing.Point(7, 268);
+            this.panel3.Location = new System.Drawing.Point(7, 274);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(243, 99);
             this.panel3.TabIndex = 7;
@@ -168,10 +172,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label7.Font = new System.Drawing.Font("Inter", 10F, System.Drawing.FontStyle.Bold);
             this.label7.Location = new System.Drawing.Point(7, 234);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 14);
+            this.label7.Size = new System.Drawing.Size(65, 17);
             this.label7.TabIndex = 6;
             this.label7.Text = "Filtreler";
             // 
@@ -233,7 +237,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label8.Location = new System.Drawing.Point(7, 251);
+            this.label8.Location = new System.Drawing.Point(7, 257);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 14);
             this.label8.TabIndex = 2;
@@ -273,7 +277,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(7, 376);
+            this.label9.Location = new System.Drawing.Point(7, 382);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 15);
             this.label9.TabIndex = 2;
@@ -330,7 +334,7 @@
             // txtBaslikFiltre
             // 
             this.txtBaslikFiltre.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBaslikFiltre.Location = new System.Drawing.Point(86, 373);
+            this.txtBaslikFiltre.Location = new System.Drawing.Point(86, 379);
             this.txtBaslikFiltre.Name = "txtBaslikFiltre";
             this.txtBaslikFiltre.Size = new System.Drawing.Size(133, 21);
             this.txtBaslikFiltre.TabIndex = 3;
@@ -432,6 +436,25 @@
             this.excelxlsxToolStripMenuItem.Text = "Excel (.xlsx)";
             this.excelxlsxToolStripMenuItem.Click += new System.EventHandler(this.excelxlsxToolStripMenuItem_Click);
             // 
+            // txtKullaniciFiltre
+            // 
+            this.txtKullaniciFiltre.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKullaniciFiltre.Location = new System.Drawing.Point(86, 406);
+            this.txtKullaniciFiltre.Name = "txtKullaniciFiltre";
+            this.txtKullaniciFiltre.Size = new System.Drawing.Size(133, 21);
+            this.txtKullaniciFiltre.TabIndex = 3;
+            this.txtKullaniciFiltre.TextChanged += new System.EventHandler(this.txtKullaniciFiltre_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(7, 409);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 15);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Kullanıcı :";
+            // 
             // Giris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -489,5 +512,7 @@
         private System.Windows.Forms.Button btnSil;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBaslikFiltre;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtKullaniciFiltre;
     }
 }

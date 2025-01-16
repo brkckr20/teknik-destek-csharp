@@ -151,6 +151,7 @@ namespace Talepler
             detaylar._date = dateTarih.Value.ToString();
             detaylar._department = txtDepartman.Text;
             detaylar._name = txtKullanici.Text;
+            detaylar._description = txtAciklama.Text;
             detaylar.ShowDialog();
         }
 
@@ -200,7 +201,11 @@ namespace Talepler
 
         private void txtBaslikFiltre_TextChanged(object sender, EventArgs e)
         {
-            string filter = txtBaslikFiltre.Text.ToLower();
+            SetGridViewWithFilter("Baslik",txtBaslikFiltre);
+        }
+        void SetGridViewWithFilter(string FieldName, TextBox textBox)
+        {
+            string filter = textBox.Text.ToLower();
             if (string.IsNullOrEmpty(filter))
             {
                 dataGridView1.DataSource = dataTable;
@@ -208,21 +213,24 @@ namespace Talepler
             else
             {
                 var filteredRows = dataTable.AsEnumerable()
-    .Where(row => row.Field<string>("Baslik").ToLower().Contains(filter))
-    .ToList();  // Convert to List
+                    .Where(row => row.Field<string>(FieldName).ToLower().Contains(filter))
+                    .ToList();
 
-                // If there are no matching rows, create an empty DataTable
                 if (filteredRows.Count == 0)
                 {
-                    filteredRows = new List<DataRow>();  // Empty list
+                    filteredRows = new List<DataRow>();
                 }
 
-                // Convert back to DataTable if necessary
-                var filteredDataTable = filteredRows.Any() ? filteredRows.CopyToDataTable() : dataTable.Clone();  // If no rows, create an empty DataTable
+                var filteredDataTable = filteredRows.Any() ? filteredRows.CopyToDataTable() : dataTable.Clone();
 
                 dataGridView1.DataSource = filteredDataTable;
 
             }
+        }
+
+        private void txtKullaniciFiltre_TextChanged(object sender, EventArgs e)
+        {
+            SetGridViewWithFilter("Kullanici",txtKullaniciFiltre);
         }
     }
 }

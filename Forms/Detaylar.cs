@@ -16,7 +16,7 @@ namespace Talepler.Forms
         private Point dragCursorPoint;
         private Point dragFormPoint;
         public int _id;
-        public string _name,_department,_date;
+        public string _name,_department,_date,_description;
         public Detaylar()
         {
             InitializeComponent();            
@@ -52,6 +52,7 @@ namespace Talepler.Forms
             label2.Text += " " + this._date;
             label4.Text += " " + this._department;
             label3.Text += " " + this._name;
+            lblAciklama.Text = this._description;
             dataGridView1.DataSource =  DbOperations.DetaylariGetir(this._id);
         }
     }
