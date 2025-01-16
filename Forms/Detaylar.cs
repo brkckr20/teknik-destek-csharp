@@ -18,15 +18,6 @@ namespace Talepler.Forms
         public Detaylar()
         {
             InitializeComponent();
-
-            // Panel1'e mouse olaylarını ekle
-            panel1.MouseDown += Panel1_MouseDown;
-            panel1.MouseMove += Panel1_MouseMove;
-            panel1.MouseUp += Panel1_MouseUp;
-
-            // Panel1'in cursor'ını değiştir
-            panel1.Cursor = Cursors.NoMove2D;
-            label1.Cursor = Cursors.Hand;
         }
 
         private void label1_Click(object sender, EventArgs e)

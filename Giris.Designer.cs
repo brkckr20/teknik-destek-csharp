@@ -58,6 +58,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.notEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.detayGörüntüleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excelxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,7 +92,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 648);
+            this.panel1.Size = new System.Drawing.Size(261, 669);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -321,7 +323,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(261, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1116, 648);
+            this.panel2.Size = new System.Drawing.Size(1116, 669);
             this.panel2.TabIndex = 1;
             // 
             // dataGridView1
@@ -334,7 +336,7 @@
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1116, 648);
+            this.dataGridView1.Size = new System.Drawing.Size(1116, 669);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -342,29 +344,45 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.notEkleToolStripMenuItem,
-            this.detayGörüntüleToolStripMenuItem});
+            this.detayGörüntüleToolStripMenuItem,
+            this.dışarıAktarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 70);
             // 
             // notEkleToolStripMenuItem
             // 
             this.notEkleToolStripMenuItem.Name = "notEkleToolStripMenuItem";
-            this.notEkleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.notEkleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.notEkleToolStripMenuItem.Text = "Not Ekle";
             this.notEkleToolStripMenuItem.Click += new System.EventHandler(this.notEkleToolStripMenuItem_Click);
             // 
             // detayGörüntüleToolStripMenuItem
             // 
             this.detayGörüntüleToolStripMenuItem.Name = "detayGörüntüleToolStripMenuItem";
-            this.detayGörüntüleToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.detayGörüntüleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.detayGörüntüleToolStripMenuItem.Text = "Detay Görüntüle";
             this.detayGörüntüleToolStripMenuItem.Click += new System.EventHandler(this.detayGörüntüleToolStripMenuItem_Click);
+            // 
+            // dışarıAktarToolStripMenuItem
+            // 
+            this.dışarıAktarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.excelxlsxToolStripMenuItem});
+            this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
+            // 
+            // excelxlsxToolStripMenuItem
+            // 
+            this.excelxlsxToolStripMenuItem.Name = "excelxlsxToolStripMenuItem";
+            this.excelxlsxToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.excelxlsxToolStripMenuItem.Text = "Excel (.xlsx)";
+            this.excelxlsxToolStripMenuItem.Click += new System.EventHandler(this.excelxlsxToolStripMenuItem_Click);
             // 
             // Giris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1377, 648);
+            this.ClientSize = new System.Drawing.Size(1377, 669);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Giris";
@@ -412,5 +430,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem notEkleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem detayGörüntüleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dışarıAktarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excelxlsxToolStripMenuItem;
     }
 }

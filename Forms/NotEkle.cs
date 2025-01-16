@@ -21,16 +21,6 @@ namespace Talepler.Forms
         {
             InitializeComponent();
             this._id = id;
-            lblNotEkle.Text += $" [{this._id}]";
-            this.FormBorderStyle = FormBorderStyle.None;
-            
-            // Panel1'e mouse olaylarını ekle
-            panel1.MouseDown += Panel1_MouseDown;
-            panel1.MouseMove += Panel1_MouseMove;
-            panel1.MouseUp += Panel1_MouseUp;
-
-            // Panel1'in cursor'ını değiştir
-            panel1.Cursor = Cursors.Hand;
         }
 
         private void Panel1_MouseDown(object sender, MouseEventArgs e)

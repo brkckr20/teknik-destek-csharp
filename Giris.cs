@@ -162,5 +162,24 @@ namespace Talepler
             frm.ShowDialog();
             txtKullanici.Text = frm.selectedUser;
         }
+
+        private void excelxlsxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            foreach (DataGridViewColumn item in dataGridView1.Columns)
+            {
+                dt.Columns.Add(item.HeaderText);
+            }
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataRow dataRow = dt.NewRow();
+                for (int i = 0; i < dataGridView1.Columns.Count; i++)
+                {
+                    dataRow[i] = row.Cells[i].Value ?? DBNull.Value;
+                }
+                dt.Rows.Add(dataRow);
+            }
+            ExportOperations.ExportExcel(dt);
+        }
     }
 }
