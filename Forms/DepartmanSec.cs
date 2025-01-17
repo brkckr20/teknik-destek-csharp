@@ -26,7 +26,7 @@ namespace Talepler.Forms
         {
             if (e.RowIndex >=0)
             {
-                selectedDepartment = dataGridView1.Rows[e.RowIndex].Cells["DepartmanAdi"].Value.ToString();
+                selectedDepartment = dataGridView1.Rows[e.RowIndex].Cells["Departman Adı"].Value.ToString();
                 this.Close();
             }
         }

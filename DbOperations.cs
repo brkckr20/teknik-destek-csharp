@@ -11,7 +11,7 @@ namespace Talepler
     {
         private static string connectionString = @"Server=localhost;Database=ExtremeTalepler;Trusted_Connection=True;";
 
-        public static bool TalepKaydet(string departman, string kullanici, string baslik, string aciklama, string durum,DateTime tarih, int id)
+        public static bool TalepKaydet(string departman, string kullanici, string baslik, string aciklama, string durum, DateTime tarih, int id)
         {
             try
             {
@@ -19,7 +19,7 @@ namespace Talepler
                 {
                     conn.Open();
                     string sql;
-                    
+
                     if (id == 0)
                     {
                         sql = @"INSERT INTO TechnicalSupport (Departman, Kullanici, Baslik, Aciklama, Durumu, Tarih,Durum) 
@@ -45,7 +45,7 @@ namespace Talepler
                         cmd.Parameters.AddWithValue("@aciklama", aciklama);
                         cmd.Parameters.AddWithValue("@durum", durum);
                         cmd.Parameters.AddWithValue("@kayitTarihi", tarih);
-                        
+
                         if (id != 0)
                         {
                             cmd.Parameters.AddWithValue("@id", id);
@@ -54,7 +54,7 @@ namespace Talepler
                         cmd.ExecuteNonQuery();
                         return true;
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
@@ -85,17 +85,23 @@ namespace Talepler
                                     END as Durumu, 
                                     Tarih,
                                     CASE 
-                                               WHEN N.RefNo IS NOT NULL THEN 'Güncelleme var' 
-                                               ELSE '' 
-                                           END AS Güncelleme
-                                FROM TechnicalSupport TS
-                                LEFT JOIN Notes N ON TS.Id = N.RefNo
-                                WHERE (@durumFiltre IS NULL OR Durumu = @durumFiltre)
-                                ORDER BY Tarih DESC";
+                                        WHEN MAX(N.RefNo) IS NOT NULL THEN 'Güncelleme var' 
+                                        ELSE '' 
+                                    END AS Güncelleme
+                                FROM 
+                                    TechnicalSupport TS
+                                LEFT JOIN 
+                                    Notes N ON TS.Id = N.RefNo
+	                                WHERE (@durumFiltre IS NULL OR Durumu = @durumFiltre)
+                                GROUP BY
+                                    TS.Id, Departman, Kullanici, Baslik, Aciklama, Durumu, Tarih
+                                ORDER BY 
+                                    Tarih DESC;
+                                ";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@durumFiltre", 
+                        cmd.Parameters.AddWithValue("@durumFiltre",
                             string.IsNullOrEmpty(durumFiltre) ? (object)DBNull.Value : durumFiltre);
 
                         DataTable dt = new DataTable();
@@ -149,7 +155,7 @@ namespace Talepler
                 {
                     conn.Open();
                     string sql = "select id,DepartmanAdi [Departman Adı] from Departments";
-                    using(SqlCommand cmd = new SqlCommand(sql,conn))
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
                         DataTable dt = new DataTable();
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -240,7 +246,7 @@ namespace Talepler
         }
         public static void KullaniciVeyaDepartmanKaydet(string Type, TextBox veri)
         {
-            if (Type=="K")
+            if (Type == "K")
             {
                 try
                 {
@@ -258,7 +264,7 @@ namespace Talepler
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Kullanıcı ekleme hatası :" + ex.Message,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Kullanıcı ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
             }
@@ -283,6 +289,67 @@ namespace Talepler
                     MessageBox.Show("Departman ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
+            }
+        }
+
+        public static bool NotSil(int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = "delete from Notes where Id=@Id";
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        public static bool NotGuncelle(string GorusmeNotu, string Not1, string Not2, string Not3, int id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql;
+
+                    sql = @"UPDATE Notes 
+                               SET GorusmeNotu = @gorusmenotu,
+                                   Not1= @not1, 
+                                   Not2= @not2,
+                                   Not3= @not3
+                               WHERE Id = @id";
+
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@gorusmenotu", GorusmeNotu);
+                        cmd.Parameters.AddWithValue("@not1", Not1);
+                        cmd.Parameters.AddWithValue("@not2", Not2);
+                        cmd.Parameters.AddWithValue("@not3", Not2);
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kayıt sırasında hata oluştu: " + ex.Message, "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
     }

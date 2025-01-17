@@ -26,7 +26,7 @@ namespace Talepler.Forms
         {
             if (e.RowIndex >= 0)
             {
-                selectedUser = dataGridView1.Rows[e.RowIndex].Cells["adSoyad"].Value.ToString();
+                selectedUser = dataGridView1.Rows[e.RowIndex].Cells["Ad Soyad"].Value.ToString();
                 this.Close();
             }
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Detaylar));
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -36,8 +37,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAciklama = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.kaydıSilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncellemeEkleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listeyiYenileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -82,11 +88,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(800, 203);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
@@ -107,6 +115,38 @@
             this.lblAciklama.Size = new System.Drawing.Size(710, 118);
             this.lblAciklama.TabIndex = 4;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kaydıSilToolStripMenuItem,
+            this.güncellemeEkleToolStripMenuItem,
+            this.listeyiYenileToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(229, 92);
+            // 
+            // kaydıSilToolStripMenuItem
+            // 
+            this.kaydıSilToolStripMenuItem.Name = "kaydıSilToolStripMenuItem";
+            this.kaydıSilToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.kaydıSilToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.kaydıSilToolStripMenuItem.Text = "Kaydı Sil";
+            this.kaydıSilToolStripMenuItem.Click += new System.EventHandler(this.kaydıSilToolStripMenuItem_Click);
+            // 
+            // güncellemeEkleToolStripMenuItem
+            // 
+            this.güncellemeEkleToolStripMenuItem.Name = "güncellemeEkleToolStripMenuItem";
+            this.güncellemeEkleToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.güncellemeEkleToolStripMenuItem.Text = "Güncelleme Ekle / Güncelle";
+            this.güncellemeEkleToolStripMenuItem.Click += new System.EventHandler(this.güncellemeEkleToolStripMenuItem_Click);
+            // 
+            // listeyiYenileToolStripMenuItem
+            // 
+            this.listeyiYenileToolStripMenuItem.Name = "listeyiYenileToolStripMenuItem";
+            this.listeyiYenileToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
+            this.listeyiYenileToolStripMenuItem.Text = "Listeyi Yenile";
+            this.listeyiYenileToolStripMenuItem.Click += new System.EventHandler(this.listeyiYenileToolStripMenuItem_Click);
+            // 
             // Detaylar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,6 +165,7 @@
             this.Load += new System.EventHandler(this.Detaylar_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +179,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAciklama;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem kaydıSilToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem güncellemeEkleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listeyiYenileToolStripMenuItem;
     }
 }
