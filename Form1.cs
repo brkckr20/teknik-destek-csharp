@@ -60,5 +60,15 @@ namespace Talepler
             // Departman formunuz varsa:
             // AcFormuSekmeOlarak<DepartmanForm>();
         }
+
+        private void kullanıcıKartıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcFormuSekmeOlarak<KullaniciKarti>();
+        }
+
+        private void departmanKartıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcFormuSekmeOlarak<DepartmanKarti>();
+        }
     }
 }

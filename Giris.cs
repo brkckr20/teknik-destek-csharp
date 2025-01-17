@@ -195,6 +195,7 @@ namespace Talepler
                 if (DbOperations.TalepSil(this.id))
                 {
                     VerileriYukle();
+                    FormTemizle();
                 }
             }
         }
@@ -231,6 +232,25 @@ namespace Talepler
         private void txtKullaniciFiltre_TextChanged(object sender, EventArgs e)
         {
             SetGridViewWithFilter("Kullanici",txtKullaniciFiltre);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormTemizle();
+        }
+        void FormTemizle()
+        {
+            txtDepartman.Text = "";
+            txtKullanici.Text = "";
+            txtBaslik.Text = "";
+            txtAciklama.Text = "";
+            dateTarih.Value = DateTime.Now;
+            cmbDurum.SelectedIndex = 1;
+        }
+
+        private void btnYenile_Click(object sender, EventArgs e)
+        {
+            VerileriYukle();
         }
     }
 }

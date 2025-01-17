@@ -93,6 +93,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DbOperations.cs" />
+    <Compile Include="DepartmanKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepartmanKarti.Designer.cs">
+      <DependentUpon>DepartmanKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="ExportOperations.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -130,8 +136,17 @@
     <Compile Include="Giris.Designer.cs">
       <DependentUpon>Giris.cs</DependentUpon>
     </Compile>
+    <Compile Include="KullaniciKarti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciKarti.Designer.cs">
+      <DependentUpon>KullaniciKarti.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DepartmanKarti.resx">
+      <DependentUpon>DepartmanKarti.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullaniciKarti.resx">
+      <DependentUpon>KullaniciKarti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

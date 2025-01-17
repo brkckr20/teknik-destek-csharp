@@ -41,3 +41,5 @@ D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\System.Buffers.xm
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\System.Memory.xml
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\System.Numerics.Vectors.xml
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.KullaniciKarti.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.DepartmanKarti.resources

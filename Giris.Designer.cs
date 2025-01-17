@@ -45,12 +45,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAciklama = new System.Windows.Forms.TextBox();
+            this.txtKullaniciFiltre = new System.Windows.Forms.TextBox();
             this.txtBaslikFiltre = new System.Windows.Forms.TextBox();
             this.txtBaslik = new System.Windows.Forms.TextBox();
             this.txtKullanici = new System.Windows.Forms.TextBox();
@@ -63,8 +65,7 @@
             this.detayGörüntüleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtKullaniciFiltre = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.btnYenile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +81,7 @@
             this.panel1.Controls.Add(this.cmbDurum);
             this.panel1.Controls.Add(this.btnKullaniciSec);
             this.panel1.Controls.Add(this.btnDepartmanSec);
+            this.panel1.Controls.Add(this.btnYenile);
             this.panel1.Controls.Add(this.btnSil);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label8);
@@ -214,9 +216,9 @@
             // btnSil
             // 
             this.btnSil.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnSil.Location = new System.Drawing.Point(143, 180);
+            this.btnSil.Location = new System.Drawing.Point(129, 180);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(62, 23);
+            this.btnSil.Size = new System.Drawing.Size(55, 23);
             this.btnSil.TabIndex = 3;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
@@ -225,9 +227,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.Location = new System.Drawing.Point(75, 180);
+            this.button2.Location = new System.Drawing.Point(68, 180);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(62, 23);
+            this.button2.Size = new System.Drawing.Size(55, 23);
             this.button2.TabIndex = 3;
             this.button2.Text = "Kaydet";
             this.button2.UseVisualStyleBackColor = true;
@@ -248,10 +250,11 @@
             this.button1.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.Location = new System.Drawing.Point(7, 180);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(62, 23);
+            this.button1.Size = new System.Drawing.Size(55, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Yeni";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -272,6 +275,16 @@
             this.label5.Size = new System.Drawing.Size(65, 15);
             this.label5.TabIndex = 2;
             this.label5.Text = "Açıklama :";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label10.Location = new System.Drawing.Point(7, 409);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(61, 15);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Kullanıcı :";
             // 
             // label9
             // 
@@ -330,6 +343,15 @@
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(133, 21);
             this.txtAciklama.TabIndex = 4;
+            // 
+            // txtKullaniciFiltre
+            // 
+            this.txtKullaniciFiltre.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtKullaniciFiltre.Location = new System.Drawing.Point(86, 406);
+            this.txtKullaniciFiltre.Name = "txtKullaniciFiltre";
+            this.txtKullaniciFiltre.Size = new System.Drawing.Size(133, 21);
+            this.txtKullaniciFiltre.TabIndex = 3;
+            this.txtKullaniciFiltre.TextChanged += new System.EventHandler(this.txtKullaniciFiltre_TextChanged);
             // 
             // txtBaslikFiltre
             // 
@@ -436,24 +458,16 @@
             this.excelxlsxToolStripMenuItem.Text = "Excel (.xlsx)";
             this.excelxlsxToolStripMenuItem.Click += new System.EventHandler(this.excelxlsxToolStripMenuItem_Click);
             // 
-            // txtKullaniciFiltre
+            // btnYenile
             // 
-            this.txtKullaniciFiltre.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullaniciFiltre.Location = new System.Drawing.Point(86, 406);
-            this.txtKullaniciFiltre.Name = "txtKullaniciFiltre";
-            this.txtKullaniciFiltre.Size = new System.Drawing.Size(133, 21);
-            this.txtKullaniciFiltre.TabIndex = 3;
-            this.txtKullaniciFiltre.TextChanged += new System.EventHandler(this.txtKullaniciFiltre_TextChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(7, 409);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(61, 15);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Kullanıcı :";
+            this.btnYenile.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYenile.Location = new System.Drawing.Point(190, 180);
+            this.btnYenile.Name = "btnYenile";
+            this.btnYenile.Size = new System.Drawing.Size(55, 23);
+            this.btnYenile.TabIndex = 3;
+            this.btnYenile.Text = "Yenile";
+            this.btnYenile.UseVisualStyleBackColor = true;
+            this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
             // Giris
             // 
@@ -514,5 +528,6 @@
         private System.Windows.Forms.TextBox txtBaslikFiltre;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtKullaniciFiltre;
+        private System.Windows.Forms.Button btnYenile;
     }
 }

@@ -33,6 +33,8 @@
             this.taleplerGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.talepGirişiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmanVeKullanıcılarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kullanıcıKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmanKartıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new Talepler.CustomTabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,22 +54,41 @@
             // 
             this.taleplerGirişiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.talepGirişiToolStripMenuItem});
+            this.taleplerGirişiToolStripMenuItem.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.taleplerGirişiToolStripMenuItem.Name = "taleplerGirişiToolStripMenuItem";
-            this.taleplerGirişiToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.taleplerGirişiToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.taleplerGirişiToolStripMenuItem.Text = "İşlemler";
             // 
             // talepGirişiToolStripMenuItem
             // 
             this.talepGirişiToolStripMenuItem.Name = "talepGirişiToolStripMenuItem";
-            this.talepGirişiToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.talepGirişiToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.talepGirişiToolStripMenuItem.Text = "Talep Girişi";
             this.talepGirişiToolStripMenuItem.Click += new System.EventHandler(this.talepGirişiToolStripMenuItem_Click);
             // 
             // departmanVeKullanıcılarToolStripMenuItem
             // 
+            this.departmanVeKullanıcılarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.kullanıcıKartıToolStripMenuItem,
+            this.departmanKartıToolStripMenuItem});
+            this.departmanVeKullanıcılarToolStripMenuItem.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.departmanVeKullanıcılarToolStripMenuItem.Name = "departmanVeKullanıcılarToolStripMenuItem";
-            this.departmanVeKullanıcılarToolStripMenuItem.Size = new System.Drawing.Size(154, 20);
+            this.departmanVeKullanıcılarToolStripMenuItem.Size = new System.Drawing.Size(163, 20);
             this.departmanVeKullanıcılarToolStripMenuItem.Text = "Departman ve Kullanıcılar";
+            // 
+            // kullanıcıKartıToolStripMenuItem
+            // 
+            this.kullanıcıKartıToolStripMenuItem.Name = "kullanıcıKartıToolStripMenuItem";
+            this.kullanıcıKartıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kullanıcıKartıToolStripMenuItem.Text = "Kullanıcı Kartı";
+            this.kullanıcıKartıToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıKartıToolStripMenuItem_Click);
+            // 
+            // departmanKartıToolStripMenuItem
+            // 
+            this.departmanKartıToolStripMenuItem.Name = "departmanKartıToolStripMenuItem";
+            this.departmanKartıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.departmanKartıToolStripMenuItem.Text = "Departman Kartı";
+            this.departmanKartıToolStripMenuItem.Click += new System.EventHandler(this.departmanKartıToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -108,6 +129,8 @@
         private System.Windows.Forms.ToolStripMenuItem departmanVeKullanıcılarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem talepGirişiToolStripMenuItem;
         private CustomTabControl tabControl1;
+        private System.Windows.Forms.ToolStripMenuItem kullanıcıKartıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departmanKartıToolStripMenuItem;
     }
 }
 

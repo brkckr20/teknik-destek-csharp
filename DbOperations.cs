@@ -3,6 +3,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
 using System.Collections.Generic;
+using DocumentFormat.OpenXml.Office2010.Excel;
 
 namespace Talepler
 {
@@ -21,8 +22,8 @@ namespace Talepler
                     
                     if (id == 0)
                     {
-                        sql = @"INSERT INTO TechnicalSupport (Departman, Kullanici, Baslik, Aciklama, Durumu, Tarih) 
-                               VALUES (@departman, @kullanici, @baslik, @aciklama, @durum, @kayitTarihi)";
+                        sql = @"INSERT INTO TechnicalSupport (Departman, Kullanici, Baslik, Aciklama, Durumu, Tarih,Durum) 
+                               VALUES (@departman, @kullanici, @baslik, @aciklama, @durum, @kayitTarihi,0)";
                     }
                     else
                     {
@@ -147,7 +148,7 @@ namespace Talepler
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "select DepartmanAdi from Departments";
+                    string sql = "select id,DepartmanAdi [Departman Adı] from Departments";
                     using(SqlCommand cmd = new SqlCommand(sql,conn))
                     {
                         DataTable dt = new DataTable();
@@ -170,7 +171,7 @@ namespace Talepler
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string sql = "select adSoyad from Users";
+                    string sql = "select id,adSoyad [Ad Soyad] from Users";
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
                         DataTable dt = new DataTable();
@@ -235,6 +236,53 @@ namespace Talepler
                 MessageBox.Show("Veriler yüklenirken hata oluştu: " + ex.Message, "Hata",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
+            }
+        }
+        public static void KullaniciVeyaDepartmanKaydet(string Type, TextBox veri)
+        {
+            if (Type=="K")
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string sql = @"INSERT INTO Users (adSoyad) VALUES (@adSoyad)";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@adSoyad", veri.Text);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Kullanıcı kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kullanıcı ekleme hatası :" + ex.Message,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    throw;
+                }
+            }
+            else if (Type == "D")
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string sql = @"INSERT INTO Departments (DepartmanAdi) VALUES (@DepartmanAdi)";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@DepartmanAdi", veri.Text);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Departman kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Departman ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
             }
         }
     }
