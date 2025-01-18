@@ -292,6 +292,55 @@ namespace Talepler
             }
         }
 
+        public static void KullaniciVeyaDepartmanGuncelle(string Type, TextBox veri,int id)
+        {
+            if (Type == "K")
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string sql = @"update Users set adSoyad = @adSoyad where id = @id";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@adSoyad", veri.Text);
+                            cmd.Parameters.AddWithValue("@id", id);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Kullanıcı kayıt güncelleme başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Kullanıcı ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+            }
+            else if (Type == "D")
+            {
+                try
+                {
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        string sql = @"update Departments set DepartmanAdi = @departmanAdi where id=@id";
+                        using (SqlCommand cmd = new SqlCommand(sql, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@departmanAdi", veri.Text);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Departman güncelleme işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Departman ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+            }
+        }
+
         public static bool NotSil(int id)
         {
             try

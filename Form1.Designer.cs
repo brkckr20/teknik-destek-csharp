@@ -79,14 +79,14 @@
             // kullanıcıKartıToolStripMenuItem
             // 
             this.kullanıcıKartıToolStripMenuItem.Name = "kullanıcıKartıToolStripMenuItem";
-            this.kullanıcıKartıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kullanıcıKartıToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.kullanıcıKartıToolStripMenuItem.Text = "Kullanıcı Kartı";
             this.kullanıcıKartıToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıKartıToolStripMenuItem_Click);
             // 
             // departmanKartıToolStripMenuItem
             // 
             this.departmanKartıToolStripMenuItem.Name = "departmanKartıToolStripMenuItem";
-            this.departmanKartıToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.departmanKartıToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.departmanKartıToolStripMenuItem.Text = "Departman Kartı";
             this.departmanKartıToolStripMenuItem.Click += new System.EventHandler(this.departmanKartıToolStripMenuItem_Click);
             // 
@@ -115,6 +115,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Extreme Talepler";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
