@@ -39,6 +39,7 @@
             this.cmbDurum = new System.Windows.Forms.ComboBox();
             this.btnKullaniciSec = new System.Windows.Forms.Button();
             this.btnDepartmanSec = new System.Windows.Forms.Button();
+            this.btnYenile = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.detayGörüntüleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnYenile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -212,6 +212,17 @@
             this.btnDepartmanSec.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDepartmanSec.UseVisualStyleBackColor = true;
             this.btnDepartmanSec.Click += new System.EventHandler(this.btnDepartmanSec_Click);
+            // 
+            // btnYenile
+            // 
+            this.btnYenile.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYenile.Location = new System.Drawing.Point(190, 180);
+            this.btnYenile.Name = "btnYenile";
+            this.btnYenile.Size = new System.Drawing.Size(55, 23);
+            this.btnYenile.TabIndex = 3;
+            this.btnYenile.Text = "Yenile";
+            this.btnYenile.UseVisualStyleBackColor = true;
+            this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
             // btnSil
             // 
@@ -418,6 +429,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1116, 669);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             // 
             // contextMenuStrip1
             // 
@@ -457,17 +469,6 @@
             this.excelxlsxToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.excelxlsxToolStripMenuItem.Text = "Excel (.xlsx)";
             this.excelxlsxToolStripMenuItem.Click += new System.EventHandler(this.excelxlsxToolStripMenuItem_Click);
-            // 
-            // btnYenile
-            // 
-            this.btnYenile.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnYenile.Location = new System.Drawing.Point(190, 180);
-            this.btnYenile.Name = "btnYenile";
-            this.btnYenile.Size = new System.Drawing.Size(55, 23);
-            this.btnYenile.TabIndex = 3;
-            this.btnYenile.Text = "Yenile";
-            this.btnYenile.UseVisualStyleBackColor = true;
-            this.btnYenile.Click += new System.EventHandler(this.btnYenile_Click);
             // 
             // Giris
             // 

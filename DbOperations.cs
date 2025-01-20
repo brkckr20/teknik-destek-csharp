@@ -246,8 +246,10 @@ namespace Talepler
         }
         public static void KullaniciVeyaDepartmanKaydet(string Type, TextBox veri)
         {
+            string islem = null;
             if (Type == "K")
             {
+                islem = "Kullanıcı";
                 try
                 {
                     using (SqlConnection conn = new SqlConnection(connectionString))
@@ -258,18 +260,19 @@ namespace Talepler
                         {
                             cmd.Parameters.AddWithValue("@adSoyad", veri.Text);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Kullanıcı kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"{islem} kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Kullanıcı ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"{islem} ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
             }
             else if (Type == "D")
             {
+                islem = "Departman";
                 try
                 {
                     using (SqlConnection conn = new SqlConnection(connectionString))
@@ -280,13 +283,13 @@ namespace Talepler
                         {
                             cmd.Parameters.AddWithValue("@DepartmanAdi", veri.Text);
                             cmd.ExecuteNonQuery();
-                            MessageBox.Show("Departman kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"{islem} kayıt işlemi başarılı", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Departman ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"{islem} ekleme hatası :" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
             }
@@ -399,6 +402,35 @@ namespace Talepler
                 MessageBox.Show("Kayıt sırasında hata oluştu: " + ex.Message, "Hata",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        public static void KullaniciVeyaDepartmanSil(int id,string tip)
+        {
+            if (id == 0)
+            {
+                MessageBox.Show("Kayıt silebilmek için bir kayıt seçmeniz gerekmektedir!","Bilgi",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            else
+            {
+                string sql = "";
+                if (tip == "K")
+                {
+                    sql = "delete from Users where id=@id";
+                }
+                else if (tip == "D")
+                {
+                    sql = "delete from Departments where id=@id";
+                }
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
             }
         }
     }

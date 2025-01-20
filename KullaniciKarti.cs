@@ -51,5 +51,11 @@ namespace Talepler
                 txtKullanici.Text = row.Cells["Ad Soyad"].Value?.ToString();
             }
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            DbOperations.KullaniciVeyaDepartmanSil(this.id, "K");
+            VerileriYukle();
+        }
     }
 }

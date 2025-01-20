@@ -252,5 +252,22 @@ namespace Talepler
         {
             VerileriYukle();
         }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            int durumColumnIndex = dataGridView1.Columns["Durumu"].Index;
+
+            if (e.RowIndex >= 0 && e.ColumnIndex == durumColumnIndex)
+            {
+                string durumDegeri = dataGridView1.Rows[e.RowIndex].Cells["Durumu"].Value?.ToString();
+
+                if (durumDegeri == "Tamamlandı")
+                {
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = ColorTranslator.FromHtml("#00b894");
+                    dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+
+                }
+            }
+        }
     }
 }
