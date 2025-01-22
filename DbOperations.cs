@@ -83,7 +83,7 @@ namespace Talepler
                                         WHEN '2' THEN 'Tamamlandı'
                                         ELSE 'Belirsiz'
                                     END as Durumu, 
-                                    Tarih,
+                                    FORMAT(CAST(Tarih AS DATETIME), 'dd.MM.yyyy', 'tr-TR') as Tarih,
                                     CASE 
                                         WHEN MAX(N.RefNo) IS NOT NULL THEN 'Güncelleme var' 
                                         ELSE '' 
