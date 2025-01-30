@@ -80,7 +80,7 @@
             this.pnlKullaniciKarti.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlKullaniciKarti.Location = new System.Drawing.Point(0, 0);
             this.pnlKullaniciKarti.Name = "pnlKullaniciKarti";
-            this.pnlKullaniciKarti.Size = new System.Drawing.Size(533, 352);
+            this.pnlKullaniciKarti.Size = new System.Drawing.Size(533, 358);
             this.pnlKullaniciKarti.TabIndex = 7;
             // 
             // panel1
@@ -119,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 352);
+            this.ClientSize = new System.Drawing.Size(533, 358);
             this.Controls.Add(this.pnlKullaniciKarti);
             this.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

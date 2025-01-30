@@ -44,3 +44,7 @@ D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\System.Runtime.Co
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.KullaniciKarti.resources
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.DepartmanKarti.resources
 D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.DetayGuncelle.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\System.Windows.Forms.Ribbon.dll
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.MainForm.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.CustomTabControl.resources
+D:\PROJELER\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\MDIWindowManager.dll
