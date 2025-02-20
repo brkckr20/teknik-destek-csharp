@@ -16,12 +16,12 @@ namespace Talepler
         {
             string formAdi = typeof(T).Name; 
             int sekmeGenislik = FormIsmi.Length * 8;
-            tabControl1.ItemSize = new Size(sekmeGenislik, 30);
+           // tabControl1.ItemSize = new Size(sekmeGenislik, 30);
             foreach (TabPage tp in tabControl1.TabPages)
             {
                 if (tp.Text == formAdi)
                 {
-                    tabControl1.SelectedTab = tp;
+                    //tabControl1.SelectedTab = tp;
                     return;
                 }
             }
@@ -34,14 +34,24 @@ namespace Talepler
             TabPage yeniSekme = new TabPage(FormIsmi);
             yeniSekme.Controls.Add(frm);
 
-            tabControl1.TabPages.Add(yeniSekme);
-            tabControl1.SelectedTab = yeniSekme;
+            //tabControl1.TabPages.Add(yeniSekme);
+            //tabControl1.SelectedTab = yeniSekme;
 
             frm.Show();
         }
         private void ribbonButton1_Click(object sender, EventArgs e)
         {
-            AcFormuSekmeOlarak<Giris>("Talep Girişi");
+            Giris frm = (Giris)Application.OpenForms["Giris"];
+            if (frm == null)
+            {
+                frm = new Giris();
+                tabControl1.TabPages.Add(frm);
+            }
+            else
+            {
+                tabControl1.TabPages[frm].Select();
+            }
+            //AcFormuSekmeOlarak<Giris>("Talep Girişi");
         }
 
         private void ribbonButton2_Click(object sender, EventArgs e)
@@ -56,7 +66,7 @@ namespace Talepler
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
+            //tabControl1.DrawMode = TabDrawMode.OwnerDrawFixed;
         }
 
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)

@@ -9,7 +9,9 @@ namespace Talepler
 {
     public static class DbOperations
     {
-        private static string connectionString = @"Server=localhost;Database=ExtremeTalepler;Trusted_Connection=True;";
+        //private static string connectionString = @"Server=localhost;Database=ExtremeTalepler;Trusted_Connection=True;";
+        private static string connectionString = @"Server=192.168.1.127,1433;Database=ExtremeTalepler;User Id=brk;Password=brkckr20;";
+
 
         public static bool TalepKaydet(string departman, string kullanici, string baslik, string aciklama, string durum, DateTime tarih, int id)
         {

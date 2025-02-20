@@ -32,12 +32,12 @@
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.tabControl1 = new MdiTabControl.TabControl();
+            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
-            this.tabControl1 = new Talepler.CustomTabControl();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -77,15 +77,6 @@
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Text = "";
             // 
-            // ribbonButton1
-            // 
-            this.ribbonButton1.Image = global::Talepler.Properties.Resources.Edit;
-            this.ribbonButton1.LargeImage = global::Talepler.Properties.Resources.Edit;
-            this.ribbonButton1.Name = "ribbonButton1";
-            this.ribbonButton1.SmallImage = global::Talepler.Properties.Resources.Edit;
-            this.ribbonButton1.Text = "Talep İşlemleri";
-            this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
-            // 
             // ribbonTab2
             // 
             this.ribbonTab2.Name = "ribbonTab2";
@@ -98,6 +89,32 @@
             this.ribbonPanel2.Items.Add(this.ribbonButton3);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Text = "";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.tabControl1.FontBoldOnSelect = false;
+            this.tabControl1.Location = new System.Drawing.Point(0, 145);
+            this.tabControl1.MenuRenderer = null;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.tabControl1.Size = new System.Drawing.Size(1432, 537);
+            this.tabControl1.TabCloseButtonImage = global::Talepler.Properties.Resources.Close;
+            this.tabControl1.TabCloseButtonImageDisabled = null;
+            this.tabControl1.TabCloseButtonImageHot = null;
+            this.tabControl1.TabIndex = 1;
+            this.tabControl1.TabPadLeft = 10;
+            this.tabControl1.TabPadRight = 10;
+            // 
+            // ribbonButton1
+            // 
+            this.ribbonButton1.Image = global::Talepler.Properties.Resources.Edit;
+            this.ribbonButton1.LargeImage = global::Talepler.Properties.Resources.Edit;
+            this.ribbonButton1.Name = "ribbonButton1";
+            this.ribbonButton1.SmallImage = global::Talepler.Properties.Resources.Edit;
+            this.ribbonButton1.Text = "Talep İşlemleri";
+            this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
             // 
             // ribbonButton2
             // 
@@ -116,20 +133,6 @@
             this.ribbonButton3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton3.SmallImage")));
             this.ribbonButton3.Text = "Departman Kartı";
             this.ribbonButton3.Click += new System.EventHandler(this.ribbonButton3_Click);
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
-            this.tabControl1.ItemSize = new System.Drawing.Size(160, 35);
-            this.tabControl1.Location = new System.Drawing.Point(0, 145);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(15, 5);
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1432, 537);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 2;
-            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             // 
             // MainForm
             // 
@@ -159,6 +162,6 @@
         private System.Windows.Forms.RibbonPanel ribbonPanel2;
         private System.Windows.Forms.RibbonButton ribbonButton2;
         private System.Windows.Forms.RibbonButton ribbonButton3;
-        private CustomTabControl tabControl1;
+        private MdiTabControl.TabControl tabControl1;
     }
 }
