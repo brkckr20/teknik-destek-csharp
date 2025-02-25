@@ -39,6 +39,20 @@ namespace Talepler
 
             frm.Show();
         }
+        void Ac(Form frm,string formname)
+        {
+            frm = (Form)Application.OpenForms[formname];
+            if (frm == null)
+            {
+                frm = new Form();
+                tabControl1.TabPages.Add(frm);
+            }
+            else
+            {
+                tabControl1.TabPages[frm].Select();
+            }
+        }
+
         private void ribbonButton1_Click(object sender, EventArgs e)
         {
             Giris frm = (Giris)Application.OpenForms["Giris"];
@@ -51,17 +65,36 @@ namespace Talepler
             {
                 tabControl1.TabPages[frm].Select();
             }
-            //AcFormuSekmeOlarak<Giris>("Talep Girişi");
         }
+
 
         private void ribbonButton2_Click(object sender, EventArgs e)
         {
-            AcFormuSekmeOlarak<KullaniciKarti>("Kullanıcı Kartı");
+            KullaniciKarti frm = (KullaniciKarti)Application.OpenForms["KullaniciKarti"];
+            if (frm == null)
+            {
+                frm = new KullaniciKarti();
+                tabControl1.TabPages.Add(frm);
+            }
+            else
+            {
+                tabControl1.TabPages[frm].Select();
+            }
         }
 
         private void ribbonButton3_Click(object sender, EventArgs e)
         {
-            AcFormuSekmeOlarak<DepartmanKarti>("Departman Kartı");
+            DepartmanKarti frm = (DepartmanKarti)Application.OpenForms["DepartmanKarti"];
+            if (frm == null)
+            {
+                frm = new DepartmanKarti();
+                tabControl1.TabPages.Add(frm);
+            }
+            else
+            {
+                tabControl1.TabPages[frm].Select();
+            }
+            //AcFormuSekmeOlarak<DepartmanKarti>("Departman Kartı");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
