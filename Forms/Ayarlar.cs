@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -30,7 +31,8 @@ namespace Talepler.Forms
                 if (File.Exists("C:\\Users\\casper\\Desktop\\ExtremeTalepler\\ExtremeTalepler\\Talepler\\BackupPath.txt"))
                 {
                     string savedPath = File.ReadAllText("C:\\Users\\casper\\Desktop\\ExtremeTalepler\\ExtremeTalepler\\Talepler\\BackupPath.txt");
-                    textBox1.Text = savedPath;
+                    string backupFileName = "yedek_" + DateTime.Now.ToString("dd.MM.yyyy") + ".bak";
+                    textBox1.Text = savedPath + "yedek_" + backupFileName;
                 }
             }
             catch (Exception ex)
@@ -70,6 +72,44 @@ namespace Talepler.Forms
                     SaveBackupPath(backupFilePath);
                 }
             }
+        }
+        private void BackupDatabase()
+        {
+            string backupFilePath = textBox1.Text + "\\yedek_" + DateTime.Now.ToString("dd.MM.yyyy") + ".bak";
+
+            if (string.IsNullOrEmpty(backupFilePath))
+            {
+                MessageBox.Show("Lütfen yedekleme dosyasını seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string connectionString = "Server=192.168.1.127,1433;Database=ExtremeTalepler;User Id=brk;Password=brkckr20;";
+
+            // SQL yedekleme komutunu oluştur
+            string query = $"BACKUP DATABASE ExtremeTalepler TO DISK = '{backupFilePath}'";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        // Yedekleme işlemini gerçekleştir
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Veritabanı yedeği başarıyla alındı!", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Yedekleme işlemi sırasında bir hata oluştu: {ex.Message}", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnYedekle_Click(object sender, EventArgs e)
+        {
+            BackupDatabase();
         }
     }
 }

@@ -32,9 +32,9 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnYedekle = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnYedekle = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,15 +75,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Yedek Alma İşlemleri";
             // 
-            // btnYedekle
-            // 
-            this.btnYedekle.Location = new System.Drawing.Point(7, 46);
-            this.btnYedekle.Name = "btnYedekle";
-            this.btnYedekle.Size = new System.Drawing.Size(85, 23);
-            this.btnYedekle.TabIndex = 0;
-            this.btnYedekle.Text = "Yedekle";
-            this.btnYedekle.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(7, 20);
@@ -100,6 +91,16 @@
             this.button1.Text = "Yedekleme Adresi";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnYedekle
+            // 
+            this.btnYedekle.Location = new System.Drawing.Point(7, 46);
+            this.btnYedekle.Name = "btnYedekle";
+            this.btnYedekle.Size = new System.Drawing.Size(85, 23);
+            this.btnYedekle.TabIndex = 0;
+            this.btnYedekle.Text = "Yedekle";
+            this.btnYedekle.UseVisualStyleBackColor = true;
+            this.btnYedekle.Click += new System.EventHandler(this.btnYedekle_Click);
             // 
             // Ayarlar
             // 
