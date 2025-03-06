@@ -116,6 +116,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ayarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ayarlar.Designer.cs">
+      <DependentUpon>Ayarlar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DepartmanSec.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ayarlar.resx">
+      <DependentUpon>Ayarlar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DepartmanSec.resx">
       <DependentUpon>DepartmanSec.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,7 +242,9 @@
     <None Include="Resources\News.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BackupPath.txt" />
     <Content Include="MDIWindowManager.xml" />
+    <None Include="Resources\Settings.ico" />
     <None Include="Resources\Close.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

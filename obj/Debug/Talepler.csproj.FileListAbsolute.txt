@@ -99,3 +99,4 @@ C:\Users\casper\Desktop\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talep
 C:\Users\casper\Desktop\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.exe
 C:\Users\casper\Desktop\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.pdb
 C:\Users\casper\Desktop\ExtremeTalepler\ExtremeTalepler\Talepler\bin\Debug\MdiTabControl.dll
+C:\Users\casper\Desktop\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.Ayarlar.resources

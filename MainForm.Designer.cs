@@ -34,10 +34,13 @@
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.tabControl1 = new MdiTabControl.TabControl();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -62,6 +65,7 @@
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
+            this.ribbon1.Tabs.Add(this.ribbonTab3);
             this.ribbon1.TabSpacing = 4;
             this.ribbon1.Text = "ribbon1";
             // 
@@ -89,6 +93,18 @@
             this.ribbonPanel2.Items.Add(this.ribbonButton3);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Text = "";
+            // 
+            // ribbonTab3
+            // 
+            this.ribbonTab3.Name = "ribbonTab3";
+            this.ribbonTab3.Panels.Add(this.ribbonPanel3);
+            this.ribbonTab3.Text = "Ayarlar";
+            // 
+            // ribbonPanel3
+            // 
+            this.ribbonPanel3.Items.Add(this.ribbonButton4);
+            this.ribbonPanel3.Name = "ribbonPanel3";
+            this.ribbonPanel3.Text = "Ayarlar";
             // 
             // tabControl1
             // 
@@ -134,6 +150,15 @@
             this.ribbonButton3.Text = "Departman Kartı";
             this.ribbonButton3.Click += new System.EventHandler(this.ribbonButton3_Click);
             // 
+            // ribbonButton4
+            // 
+            this.ribbonButton4.Image = global::Talepler.Properties.Resources.Settings;
+            this.ribbonButton4.LargeImage = global::Talepler.Properties.Resources.Settings;
+            this.ribbonButton4.Name = "ribbonButton4";
+            this.ribbonButton4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton4.SmallImage")));
+            this.ribbonButton4.Text = "Genel Ayarlar";
+            this.ribbonButton4.Click += new System.EventHandler(this.ribbonButton4_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -163,5 +188,8 @@
         private System.Windows.Forms.RibbonButton ribbonButton2;
         private System.Windows.Forms.RibbonButton ribbonButton3;
         private MdiTabControl.TabControl tabControl1;
+        private System.Windows.Forms.RibbonTab ribbonTab3;
+        private System.Windows.Forms.RibbonPanel ribbonPanel3;
+        private System.Windows.Forms.RibbonButton ribbonButton4;
     }
 }

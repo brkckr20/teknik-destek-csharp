@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Talepler.Forms;
 
 namespace Talepler
 {
@@ -105,6 +106,20 @@ namespace Talepler
         private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
         {
             
+        }
+
+        private void ribbonButton4_Click(object sender, EventArgs e)
+        {
+            Ayarlar frm = (Ayarlar)Application.OpenForms["Ayarlar"];
+            if (frm == null)
+            {
+                frm = new Ayarlar();
+                tabControl1.TabPages.Add(frm);
+            }
+            else
+            {
+                tabControl1.TabPages[frm].Select();
+            }
         }
     }
 }
