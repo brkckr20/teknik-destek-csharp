@@ -36,8 +36,10 @@
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.tabControl1 = new MdiTabControl.TabControl();
             this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
+            this.ribbonButton5 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton2 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton3 = new System.Windows.Forms.RibbonButton();
             this.ribbonButton4 = new System.Windows.Forms.RibbonButton();
@@ -73,6 +75,7 @@
             // 
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Panels.Add(this.ribbonPanel1);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel4);
             this.ribbonTab1.Text = "Talep İşlemleri";
             // 
             // ribbonPanel1
@@ -106,6 +109,12 @@
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Text = "Ayarlar";
             // 
+            // ribbonPanel4
+            // 
+            this.ribbonPanel4.Items.Add(this.ribbonButton5);
+            this.ribbonPanel4.Name = "ribbonPanel4";
+            this.ribbonPanel4.Text = "";
+            // 
             // tabControl1
             // 
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -131,6 +140,15 @@
             this.ribbonButton1.SmallImage = global::Talepler.Properties.Resources.Edit;
             this.ribbonButton1.Text = "Talep İşlemleri";
             this.ribbonButton1.Click += new System.EventHandler(this.ribbonButton1_Click);
+            // 
+            // ribbonButton5
+            // 
+            this.ribbonButton5.Image = global::Talepler.Properties.Resources.Graph_Report;
+            this.ribbonButton5.LargeImage = global::Talepler.Properties.Resources.Graph_Report;
+            this.ribbonButton5.Name = "ribbonButton5";
+            this.ribbonButton5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton5.SmallImage")));
+            this.ribbonButton5.Text = "Talepler Detaylı Raporu";
+            this.ribbonButton5.Click += new System.EventHandler(this.ribbonButton5_Click);
             // 
             // ribbonButton2
             // 
@@ -191,5 +209,7 @@
         private System.Windows.Forms.RibbonTab ribbonTab3;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonButton ribbonButton4;
+        private System.Windows.Forms.RibbonPanel ribbonPanel4;
+        private System.Windows.Forms.RibbonButton ribbonButton5;
     }
 }

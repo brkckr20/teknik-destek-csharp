@@ -435,5 +435,33 @@ namespace Talepler
                 }
             }
         }
+        public static DataTable TaleplerDetayliListesi(string durumFiltre = null)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string sql = @"select * from View_TaleplerDetayliRapor";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@durumFiltre",
+                            string.IsNullOrEmpty(durumFiltre) ? (object)DBNull.Value : durumFiltre);
+
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Veriler yüklenirken hata oluştu: " + ex.Message, "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+        }
     }
 }

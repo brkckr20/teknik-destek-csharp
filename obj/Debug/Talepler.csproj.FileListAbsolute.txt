@@ -152,3 +152,4 @@ C:\Users\casper\Desktop\Klasörler\ExtremeTalepler\ExtremeTalepler\Talepler\obj\
 C:\Users\casper\Desktop\Klasörler\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.csproj.Up2Date
 C:\Users\casper\Desktop\Klasörler\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.exe
 C:\Users\casper\Desktop\Klasörler\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.pdb
+C:\Users\casper\Desktop\Klasörler\ExtremeTalepler\ExtremeTalepler\Talepler\obj\Debug\Talepler.Forms.TaleplerDetayliRapor.resources

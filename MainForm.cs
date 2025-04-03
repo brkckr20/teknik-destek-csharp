@@ -121,5 +121,19 @@ namespace Talepler
                 tabControl1.TabPages[frm].Select();
             }
         }
+
+        private void ribbonButton5_Click(object sender, EventArgs e)
+        {
+            TaleplerDetayliRapor frm = (TaleplerDetayliRapor)Application.OpenForms["TaleplerDetayliRapor"];
+            if (frm == null)
+            {
+                frm = new TaleplerDetayliRapor();
+                tabControl1.TabPages.Add(frm);
+            }
+            else
+            {
+                tabControl1.TabPages[frm].Select();
+            }
+        }
     }
 }
