@@ -67,6 +67,7 @@
             this.detayGörüntüleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dışarıAktarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excelxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rdIncelenecek = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,6 +111,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.rdIncelenecek);
             this.panel3.Controls.Add(this.radioButton4);
             this.panel3.Controls.Add(this.radioButton3);
             this.panel3.Controls.Add(this.radioButton2);
@@ -117,7 +119,7 @@
             this.panel3.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.panel3.Location = new System.Drawing.Point(7, 274);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 99);
+            this.panel3.Size = new System.Drawing.Size(243, 121);
             this.panel3.TabIndex = 7;
             // 
             // radioButton4
@@ -292,7 +294,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label10.Location = new System.Drawing.Point(7, 409);
+            this.label10.Location = new System.Drawing.Point(7, 452);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(61, 15);
             this.label10.TabIndex = 2;
@@ -302,7 +304,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Inter", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(7, 382);
+            this.label9.Location = new System.Drawing.Point(7, 425);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 15);
             this.label9.TabIndex = 2;
@@ -359,7 +361,7 @@
             // txtKullaniciFiltre
             // 
             this.txtKullaniciFiltre.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtKullaniciFiltre.Location = new System.Drawing.Point(86, 406);
+            this.txtKullaniciFiltre.Location = new System.Drawing.Point(86, 449);
             this.txtKullaniciFiltre.Name = "txtKullaniciFiltre";
             this.txtKullaniciFiltre.Size = new System.Drawing.Size(133, 21);
             this.txtKullaniciFiltre.TabIndex = 3;
@@ -368,7 +370,7 @@
             // txtBaslikFiltre
             // 
             this.txtBaslikFiltre.Font = new System.Drawing.Font("Inter", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBaslikFiltre.Location = new System.Drawing.Point(86, 379);
+            this.txtBaslikFiltre.Location = new System.Drawing.Point(86, 422);
             this.txtBaslikFiltre.Name = "txtBaslikFiltre";
             this.txtBaslikFiltre.Size = new System.Drawing.Size(133, 21);
             this.txtBaslikFiltre.TabIndex = 3;
@@ -471,6 +473,19 @@
             this.excelxlsxToolStripMenuItem.Text = "Excel (.xlsx)";
             this.excelxlsxToolStripMenuItem.Click += new System.EventHandler(this.excelxlsxToolStripMenuItem_Click);
             // 
+            // rdIncelenecek
+            // 
+            this.rdIncelenecek.AutoSize = true;
+            this.rdIncelenecek.Location = new System.Drawing.Point(3, 95);
+            this.rdIncelenecek.Name = "rdIncelenecek";
+            this.rdIncelenecek.Size = new System.Drawing.Size(85, 18);
+            this.rdIncelenecek.TabIndex = 0;
+            this.rdIncelenecek.TabStop = true;
+            this.rdIncelenecek.Text = "İncelenecek";
+            this.rdIncelenecek.UseVisualStyleBackColor = true;
+            this.rdIncelenecek.CheckedChanged += new System.EventHandler(this.RadioButtons_CheckedChanged);
+            this.rdIncelenecek.Click += new System.EventHandler(this.RadioButtons_CheckedChanged);
+            // 
             // Giris
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,5 +548,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtKullaniciFiltre;
         private System.Windows.Forms.Button btnYenile;
+        private System.Windows.Forms.RadioButton rdIncelenecek;
     }
 }

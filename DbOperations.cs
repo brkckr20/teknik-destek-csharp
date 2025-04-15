@@ -83,6 +83,7 @@ namespace Talepler
                                         WHEN '0' THEN 'İptal'
                                         WHEN '1' THEN 'Beklemede'
                                         WHEN '2' THEN 'Tamamlandı'
+                                        WHEN '3' THEN 'İncelenecek'
                                         ELSE 'Belirsiz'
                                     END as Durumu, 
                                     FORMAT(CAST(Tarih AS DATETIME), 'dd.MM.yyyy', 'tr-TR') as Tarih,

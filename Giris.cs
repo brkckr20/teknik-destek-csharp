@@ -19,7 +19,7 @@ namespace Talepler
         {
             InitializeComponent();
 
-            cmbDurum.Items.AddRange(new string[] { "İptal", "Beklemede", "Tamamlandı" });
+            cmbDurum.Items.AddRange(new string[] { "İptal", "Beklemede", "Tamamlandı", "İncelenecek" });
             cmbDurum.SelectedIndex = 1;
 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -49,6 +49,10 @@ namespace Talepler
             else if (radioButton4.Checked)
             {
                 durumFiltre = "0";
+            }
+            else if (rdIncelenecek.Checked)
+            {
+                durumFiltre = "3";
             }
             dataTable = DbOperations.TalepListesi(durumFiltre);
             dataGridView1.DataSource = dataTable;
@@ -133,6 +137,9 @@ namespace Talepler
                         break;
                     case "Tamamlandı":
                         cmbDurum.SelectedIndex = 2;
+                        break;
+                    case "İncelenecek":
+                        cmbDurum.SelectedIndex = 3;
                         break;
                 }
             }
