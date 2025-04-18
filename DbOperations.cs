@@ -392,7 +392,7 @@ namespace Talepler
                         cmd.Parameters.AddWithValue("@gorusmenotu", GorusmeNotu);
                         cmd.Parameters.AddWithValue("@not1", Not1);
                         cmd.Parameters.AddWithValue("@not2", Not2);
-                        cmd.Parameters.AddWithValue("@not3", Not2);
+                        cmd.Parameters.AddWithValue("@not3", Not3);
                         cmd.Parameters.AddWithValue("@id", id);
 
                         cmd.ExecuteNonQuery();
